@@ -27,3 +27,11 @@ Bu Alanda filmler isimleri yazılarak aranabilir.
 ## Admin Paneli
 ### Panelin içeriği:
 Hesap bilgileri, Bütün yorumlar, Bütün filmler, Admin işlemleri, Çıkış, 
+
+## Modeller
+- Kişi
+- Kullanıcı
+- Admin
+- Film
+- Yorum
+- Oyuncu

@@ -35,3 +35,4 @@ Hesap bilgileri, Bütün yorumlar, Bütün filmler, Admin işlemleri, Çıkış,
 - Film
 - Yorum
 - Oyuncu
+- Kategori

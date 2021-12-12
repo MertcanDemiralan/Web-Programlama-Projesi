@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Web_Programlama_Projesi.Models
+namespace WebProje.Models
 {
     public class Oyuncu
     {
@@ -15,15 +15,15 @@ namespace Web_Programlama_Projesi.Models
         [Required(ErrorMessage = "Oyuncu Adı alanı zorunludur!")]
         [MaxLength(100)]
         [MinLength(3)]
-        public String Adi { get; set; }
+        public string Adi { get; set; }
 
         [Required(ErrorMessage = "Oyuncu Soyadı alanı zorunludur!")]
         [MaxLength(100)]
         [MinLength(3)]
-        public String Soyadi { get; set; }
+        public string Soyadi { get; set; }
 
         [Required(ErrorMessage = "Fotoğraf alanı zorunludur!")]
-        public String Fotografi { get; set; }
+        public string Fotografi { get; set; }
 
     }
 }

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Programlama_Projesi.Models
+namespace WebProje.Models
 {
     public class Yorum
     {
@@ -12,7 +12,7 @@ namespace Web_Programlama_Projesi.Models
         public int Id { get; set; }
         public int Yapan_Kullanici_Id { get; set; }
         public int Yapilan_Film_Id { get; set; }
-        public String Yorum_Metni { get; set; }
+        public string Yorum_Metni { get; set; }
         public float Yildiz { get; set; }
 
     }

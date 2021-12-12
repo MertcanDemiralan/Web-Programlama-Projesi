@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Web_Programlama_Projesi.Models;
+using WebProje.Models;
 
-namespace Web_Programlama_Projesi.Controllers
+namespace WebProje.Controllers
 {
     public class HomeController : Controller
     {

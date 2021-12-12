@@ -1,0 +1,48 @@
+﻿@model WebProje.Models.Yorum
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Yorum</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Yapan_Kullanici_Id" class="control-label"></label>
+                <input asp-for="Yapan_Kullanici_Id" class="form-control" />
+                <span asp-validation-for="Yapan_Kullanici_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yapilan_Film_Id" class="control-label"></label>
+                <input asp-for="Yapilan_Film_Id" class="form-control" />
+                <span asp-validation-for="Yapilan_Film_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yorum_Metni" class="control-label"></label>
+                <input asp-for="Yorum_Metni" class="form-control" />
+                <span asp-validation-for="Yorum_Metni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Yildiz" class="control-label"></label>
+                <input asp-for="Yildiz" class="form-control" />
+                <span asp-validation-for="Yildiz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

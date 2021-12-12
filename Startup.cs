@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Web_Programlama_Projesi
+namespace WebProje
 {
     public class Startup
     {

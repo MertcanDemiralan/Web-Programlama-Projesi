@@ -8,6 +8,6 @@ namespace WebProje.Models
     public class Kategori
     {
         public int Id { get; set; }
-        public int Kategori_Adı { get; set; }
+        public string Kategori_Adı { get; set; }
     }
 }

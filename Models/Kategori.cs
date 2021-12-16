@@ -9,5 +9,6 @@ namespace WebProje.Models
     {
         public int Id { get; set; }
         public string Kategori_Adı { get; set; }
+        public ICollection<Film> Filmler { get; set; }
     }
 }

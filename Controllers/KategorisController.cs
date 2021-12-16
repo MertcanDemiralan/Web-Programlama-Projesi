@@ -38,7 +38,23 @@ namespace WebProje.Controllers
             {
                 return NotFound();
             }
-
+                if(kategori.Filmler.Count() >=1)
+                { 
+                    foreach (var film in _context.Filmler)
+                    {
+                        foreach(var ktgr in film.Kategoriler)
+                        {
+                            if (ktgr.Id==id)
+                            {
+                                kategori.Filmler.Add(film);
+                            }
+                        }
+                
+                
+                    }
+                }
+                else
+                    { }
             return View(kategori);
         }
 

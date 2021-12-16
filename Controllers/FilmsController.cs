@@ -39,6 +39,8 @@ namespace WebProje.Controllers
                 return NotFound();
             }
 
+            var yorumlar = _context.Yorumlar.Where(yorum => yorum.Yapilan_Film_Id == id).ToList();
+
             return View(film);
         }
 

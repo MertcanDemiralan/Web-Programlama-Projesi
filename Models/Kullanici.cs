@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebProje.Models
+namespace WebProgramlamaProjesi.Models
 {
     public class Kullanici
     {

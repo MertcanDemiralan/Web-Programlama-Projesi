@@ -5,18 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebProje.Models;
+using WebProgramlamaProjesi.Data;
+using WebProgramlamaProjesi.Models;
 
-namespace WebProje.Controllers
+namespace WebProgramlamaProjesi.Controllers
 {
     public class YorumsController : Controller
     {
-        FilmContext _context = new FilmContext();
+        ApplicationDbContext _context;//= new FilmContext();
 
-        //public YorumsController(FilmContext context)
-        //{
-        //    _context = context;
-        //}
+        public YorumsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: Yorums
         public async Task<IActionResult> Index()

@@ -5,18 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebProje.Models;
+using WebProgramlamaProjesi.Data;
+using WebProgramlamaProjesi.Models;
 
-namespace WebProje.Controllers
+namespace WebProgramlamaProjesi.Controllers
 {
     public class KategorisController : Controller
     {
-        FilmContext _context = new FilmContext();
+        ApplicationDbContext _context;// = new FilmContext();
 
-        //public KategorisController(FilmContext context)
-        //{
-        //    _context = context;
-        //}
+        public KategorisController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: Kategoris
         public async Task<IActionResult> Index()
@@ -38,23 +39,24 @@ namespace WebProje.Controllers
             {
                 return NotFound();
             }
-                if(kategori.Filmler.Count() >=1)
-                { 
-                    foreach (var film in _context.Filmler)
+            if (kategori.Filmler.Count() >= 1)
+            {
+                foreach (var film in _context.Filmler)
+                {
+                    foreach (var ktgr in film.Kategoriler)
                     {
-                        foreach(var ktgr in film.Kategoriler)
+                        if (ktgr.Id == id)
                         {
-                            if (ktgr.Id==id)
-                            {
-                                kategori.Filmler.Add(film);
-                            }
+                            kategori.Filmler.Add(film);
                         }
-                
-                
                     }
+
+
                 }
-                else
-                    { }
+            }
+            else
+            {
+            }
             return View(kategori);
         }
 

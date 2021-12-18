@@ -5,18 +5,19 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebProje.Models;
+using WebProgramlamaProjesi.Data;
+using WebProgramlamaProjesi.Models;
 
-namespace WebProje.Controllers
+namespace WebProgramlamaProjesi.Controllers
 {
     public class FilmsController : Controller
     {
-        FilmContext _context = new FilmContext();
+        ApplicationDbContext _context;// = new FilmContext();
 
-        //public FilmsController(FilmContext context)
-        //{
-        //    _context = context;
-        //}
+        public FilmsController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         // GET: Films
         public async Task<IActionResult> Index()

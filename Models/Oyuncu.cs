@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace WebProje.Models
+namespace WebProgramlamaProjesi.Models
 {
     public class Oyuncu
     {

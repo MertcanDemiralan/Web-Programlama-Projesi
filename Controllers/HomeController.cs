@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using OMDb.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using WebProgramlamaProjesi.Models;
 
-namespace WebProgramlamaProjesi.Controllers
+namespace OMDb.Controllers
 {
     public class HomeController : Controller
     {
@@ -22,7 +23,8 @@ namespace WebProgramlamaProjesi.Controllers
         {
             return View();
         }
-
+        //sadece login olanlar girebilir
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();

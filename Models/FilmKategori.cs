@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace OMDb.Models
 {
-    public class Yorum
+    public class FilmKategori
     {
         [Key]
-        public int YorumId { get; set; }
-        [Required]
-        [MaxLength(255)]
-        [MinLength(3)]
-        [Display(Name = "Yorum")]
-        public string Text { get; set; }
+        public int FilmKategoriId { get; set; }
+        public int KategoriId { get; set; }
+        public Kategori Kategori { get; set; }
         public int FilmId { get; set; }
         public Film Film { get; set; }
     }

@@ -1,6 +1,6 @@
 using System;
 
-namespace WebProgramlamaProjesi.Models
+namespace OMDb.Models
 {
     public class ErrorViewModel
     {

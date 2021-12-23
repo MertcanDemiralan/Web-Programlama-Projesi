@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebProgramlamaProjesi.Models
+namespace OMDb.Models
 {
     public class Film
     {
@@ -21,8 +21,16 @@ namespace WebProgramlamaProjesi.Models
         [MinLength(3)]
         public string Film_Aciklamasi { get; set; }
 
-        public ICollection<Kategori> Kategoriler { get; set; }
+        [Required(ErrorMessage = "Film URL alanı zorunludur!")]
+        public string Film_URL { get; set; }
+
+        //public int Kategori_Id { get; set; }
+        //Filmlerin kategorileri girilirken kategorilerin arasına ", " çift tırnak içerisindeki ifadeyi yazınız.Ve kategorilerin sadece ilk harfleri Büyük  olsun.Örneğin Aksiyon
+        [Required(ErrorMessage = "Film Kategorileri alanı zorunludur!")]
+        public string Film_Kategorileri { get; set; }
+
+        public ICollection<FilmKategori> FilmKategoriler { get; set; }
         public ICollection<Yorum> Yorumlar { get; set; }
-        public ICollection<Oyuncu> Oyuncular { get; set; }
+        //public ICollection<Oyuncu> Oyuncular { get; set; }
     }
 }

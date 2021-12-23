@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace WebProgramlamaProjesi.Data.Migrations
+namespace OMDb.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

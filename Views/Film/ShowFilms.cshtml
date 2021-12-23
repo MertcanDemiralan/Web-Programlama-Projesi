@@ -1,0 +1,70 @@
+﻿@model IEnumerable<OMDb.Models.Film>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h1>Filmler</h1>
+
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>*@
+
+<div class="row ">
+
+    <div class="col-sm-10">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-sm-6" style="border:outset;border-collapse:collapse;padding:8px">
+                    <div class=" row">
+                        <div class="col-md-6">
+                            <img src="@item.Film_URL" width="150" />
+                        </div>
+                        <div class=" col-6">
+                            <span style=" margin-left:6px">
+                                <a asp-action="DetailsYorum" asp-route-id="@item.FilmId">Film ismi: @Html.DisplayFor(modelItem => item.Film_Adi)</a>
+                            </span>
+                            <span class="row" style=" margin-left:6px,">
+                                Film açıklaması: @Html.DisplayFor(modelItem => item.Film_Aciklamasi)
+                            </span>
+                        </div>
+                        @*<a asp-action="Edit" asp-route-id="@item.FilmId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.FilmId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.FilmId">Delete</a>*@
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+        <div class="panel">
+
+            <div class="vertical-menu">
+                <a href="" title="Aksiyon Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Aksiyon</span></a>
+                <a href="" title="Çocuklar Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Animasyon</span></a>
+                <a href="" title="Bilim Kurgu Türüne ait flfilmlerimler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Bilim Kurgu</span></a>
+                <a href="" title="Dram Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Dram</span></a>
+                <a href="" title="Fantastik Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Fantastik</span></a>
+                <a href="" title="Gerilim Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Gerilim</span></a>
+                <a href="" title="Gizem Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Gizem</span></a>
+                <a href="" title="Komedi Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Komedi</span></a>
+                <a href="" title="Korku Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Korku</span></a>
+                <a href="" title="Macera Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Macera</span></a>
+                <a href="" title="Polisiye Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Polisiye</span></a>
+                <a href="" title="Psikolojik Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Psikolojik</span></a>
+                <a href="" title="Romantizm Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Romantizm</span></a>
+                <a href="" title="Spor Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Spor</span></a>
+                <a href="" title="Tarihi Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Tarihi</span></a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

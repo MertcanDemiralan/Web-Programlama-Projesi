@@ -1,0 +1,39 @@
+﻿@model IEnumerable<OMDb.Models.Yorum>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+<h1>@Html.DisplayNameFor(model => model.Film.Film_Adi)</h1>
+
+<h2>Yorumlar</h2>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+
+        <div class="col-sm-12" style="border:outset;border-collapse:collapse;padding:8px">
+            <div class=" row">
+                <div class=" col-12">
+                    <span style=" margin-left:6px">
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </span>
+                </div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.YorumId">Edit | </a>
+                        <a asp-action="Details" asp-route-id="@item.YorumId">Details | </a>
+                        <a asp-action="Delete" asp-route-id="@item.YorumId">Delete</a>
+                    }
+                }
+
+            </div>
+        </div>
+
+    }
+    <a href="/Yorum/Create" class="w3-bar-item w3-button">Yorum yap.</a>
+
+</div>

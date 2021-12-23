@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OMDb.Data;
 
 namespace OMDb.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211221120536_FilmlerEklendi")]
+    partial class FilmlerEklendi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,45 +182,6 @@ namespace OMDb.Data.Migrations
                     b.ToTable("Filmler");
                 });
 
-            modelBuilder.Entity("OMDb.Models.FilmKategori", b =>
-                {
-                    b.Property<int>("FilmKategoriId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("FilmId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("KategoriId")
-                        .HasColumnType("int");
-
-                    b.HasKey("FilmKategoriId");
-
-                    b.HasIndex("FilmId");
-
-                    b.HasIndex("KategoriId");
-
-                    b.ToTable("FilmKategoriler");
-                });
-
-            modelBuilder.Entity("OMDb.Models.Kategori", b =>
-                {
-                    b.Property<int>("KategoriId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Kategori_Adi")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("KategoriId");
-
-                    b.ToTable("Kategoriler");
-                });
-
             modelBuilder.Entity("OMDb.Models.Users", b =>
                 {
                     b.Property<string>("Id")
@@ -290,28 +253,6 @@ namespace OMDb.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("OMDb.Models.Yorum", b =>
-                {
-                    b.Property<int>("YorumId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("FilmId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("YorumId");
-
-                    b.HasIndex("FilmId");
-
-                    b.ToTable("Yorumlar");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -361,48 +302,6 @@ namespace OMDb.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("OMDb.Models.FilmKategori", b =>
-                {
-                    b.HasOne("OMDb.Models.Film", "Film")
-                        .WithMany("FilmKategoriler")
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OMDb.Models.Kategori", "Kategori")
-                        .WithMany("FilmKategoriler")
-                        .HasForeignKey("KategoriId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-
-                    b.Navigation("Kategori");
-                });
-
-            modelBuilder.Entity("OMDb.Models.Yorum", b =>
-                {
-                    b.HasOne("OMDb.Models.Film", "Film")
-                        .WithMany("Yorumlar")
-                        .HasForeignKey("FilmId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Film");
-                });
-
-            modelBuilder.Entity("OMDb.Models.Film", b =>
-                {
-                    b.Navigation("FilmKategoriler");
-
-                    b.Navigation("Yorumlar");
-                });
-
-            modelBuilder.Entity("OMDb.Models.Kategori", b =>
-                {
-                    b.Navigation("FilmKategoriler");
                 });
 #pragma warning restore 612, 618
         }

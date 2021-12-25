@@ -36,9 +36,10 @@ namespace OMDb.Controllers
             {
                 return NotFound();
             }
-            var yorumlar = (from yorum in _context.Yorumlar
-                            where yorum.FilmId == id
-                            select yorum).ToList();
+            var yorumlar = await (from yorum in _context.Yorumlar
+                            join film in _context.Filmler
+                            on yorum.FilmId equals film.FilmId
+                            select yorum).ToListAsync();
             //var yorumlar = await _context.Yorumlar
             //    .Include(y => y.Film)
             //     //_context.Filmler

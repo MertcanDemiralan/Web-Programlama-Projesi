@@ -4,7 +4,26 @@
     ViewData["Title"] = "Index";
 
 }
+<style>
+    
 
+        .vertical-menu a {
+            background-color: #ffc107;
+            color: fff;
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+            .vertical-menu a:hover {
+                background-color: #fff;
+            }
+
+            .vertical-menu a.active {
+                background-color: #ffc107;
+                color: white;
+            }
+</style>
 <h1>Filmler</h1>
 
 @*<p>
@@ -45,21 +64,21 @@
         <div class="panel">
 
             <div class="vertical-menu">
-                <a href="" title="Aksiyon Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Aksiyon</span></a>
-                <a href="" title="Çocuklar Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Animasyon</span></a>
-                <a href="" title="Bilim Kurgu Türüne ait flfilmlerimler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Bilim Kurgu</span></a>
-                <a href="" title="Dram Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Dram</span></a>
-                <a href="" title="Fantastik Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Fantastik</span></a>
-                <a href="" title="Gerilim Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Gerilim</span></a>
-                <a href="" title="Gizem Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Gizem</span></a>
-                <a href="" title="Komedi Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Komedi</span></a>
-                <a href="" title="Korku Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Korku</span></a>
-                <a href="" title="Macera Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Macera</span></a>
-                <a href="" title="Polisiye Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Polisiye</span></a>
-                <a href="" title="Psikolojik Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Psikolojik</span></a>
-                <a href="" title="Romantizm Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Romantizm</span></a>
-                <a href="" title="Spor Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Spor</span></a>
-                <a href="" title="Tarihi Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span style="color:#4a4a4a;" class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Tarihi</span></a>
+                <a href="" title="Aksiyon Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Aksiyon</span></a>
+                <a href="" title="Çocuklar Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Animasyon</span></a>
+                <a href="" title="Bilim Kurgu Türüne ait flfilmlerimler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Bilim Kurgu</span></a>
+                <a href="" title="Dram Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Dram</span></a>
+                <a href="" title="Fantastik Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Fantastik</span></a>
+                <a href="" title="Gerilim Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Gerilim</span></a>
+                <a href="" title="Gizem Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Gizem</span></a>
+                <a href="" title="Komedi Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Komedi</span></a>
+                <a href="" title="Korku Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Korku</span></a>
+                <a href="" title="Macera Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Macera</span></a>
+                <a href="" title="Polisiye Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Polisiye</span></a>
+                <a href="" title="Psikolojik Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Psikolojik</span></a>
+                <a href="" title="Romantizm Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Romantizm</span></a>
+                <a href="" title="Spor Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Spor</span></a>
+                <a href="" title="Tarihi Türüne ait filmler" style="margin-left:5px; width: 100% !important; display: inline-block; cursor:pointer"><span class="fa fa-tag fa-fw fa-fw"></span> <span class="kategoriAdi">Tarihi</span></a>
 
             </div>
         </div>

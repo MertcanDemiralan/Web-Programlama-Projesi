@@ -4,18 +4,24 @@
     ViewData["Title"] = "Index";
 
 }
-<h1>@Html.DisplayNameFor(model => model.Film.Film_Adi)</h1>
-
+@{ var count = true;}
+@foreach (var item in Model)
+{
+    if (count == true)
+    {
+        @Html.DisplayFor(modelItem => item.Film.Film_Adi)
+        count = false;
+    }
+}
 <h2>Yorumlar</h2>
 
-<div class="row">
+<div style="margin:8px" class="row">
     @{
         var tempFilmId = 0;
         string path = "/Film/DetailsYorum/";
     }
     @foreach (var item in Model)
     {
-
         <div class="col-sm-12" style="border:outset;border-collapse:collapse;padding:8px">
             <div class=" row">
                 <div class=" col-12">
@@ -39,7 +45,8 @@
 
     }
     @{path += tempFilmId.ToString(); }
-    <a href="/Yorum/Create" class="w3-bar-item w3-button">Yorum yap.</a>
-    <a href="@path" class="w3-bar-item w3-button">Geri dön.</a>
+    <a style="margin:5px" href="/Yorum/Create" class="w3-bar-item w3-button">Yorum yap.</a>
+
+    <a style="margin:7px" href="@path" class="w3-bar-item w3-button">Geri dön.</a>
 
 </div>

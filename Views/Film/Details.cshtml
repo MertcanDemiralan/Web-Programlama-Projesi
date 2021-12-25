@@ -4,38 +4,33 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h2>@Html.DisplayFor(model => model.Film_Adi)</h2>
 
 <div>
-    <h4>Film</h4>
+    
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_Adi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Film_Adi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_Aciklamasi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Film_Aciklamasi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_URL)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Film_URL)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_Kategorileri)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Film_Kategorileri)
-        </dd>
-    </dl>
-</div>
+    <div class="row">
+        <div class="col-3">
+            <div>
+                <img src="@Model.Film_URL" />
+            </div>
+        </div>
+        <div >
+            <div class="row">
+                <div><p>Film Kategorileri : </p></div>
+                <div><p>@Html.DisplayFor(model => model.Film_Kategorileri)</p></div>
+
+            </div>
+            <div class="row">
+                <div><p>Film Açıklaması : </p></div>
+                <div><p>@Html.DisplayFor(model => model.Film_Aciklamasi)</p></div>
+            </div>
+
+            
+        </div>
+    </div>
+           
+     </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.FilmId">Edit</a> |
     <a asp-action="Index">Back to List</a>

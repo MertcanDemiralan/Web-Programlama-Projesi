@@ -4,43 +4,36 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+
 @{
     var tempFilmId = 0;
     string path = "/Yorum/ShowYorums/";
     tempFilmId = Model.FilmId;
     path += tempFilmId.ToString();
 }
-<div>
-    <h4>Film</h4>
+<div style="margin:7px">
+    <h1>@Html.DisplayFor(model => model.Film_Adi)</h1>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_Adi)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Film_Adi)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_Aciklamasi)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Film_Aciklamasi)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_URL)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Film_URL)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Film_Kategorileri)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Film_Kategorileri)
-        </dd>
+    <div class="row">
+        <div class="col-3">
+            <div>
+                <img src="@Model.Film_URL" />
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div><p>Film Kategorileri : </p></div>
+                <div><p>@Html.DisplayFor(model => model.Film_Kategorileri)</p></div>
 
-    </dl>
+            </div>
+            <div class="row">
+                <div><p>Film Açıklaması : </p></div>
+                <div><p>@Html.DisplayFor(model => model.Film_Aciklamasi)</p></div>
+            </div>
+
+
+        </div>
+    </div>
     <a href="@path" class="w3-bar-item w3-button">Film yorumlarını okumak ve yorum yapmak için tıklayınız.</a>
 
 </div>
@@ -55,4 +48,4 @@
     }
 }
 
-<a href="/Film/ShowFilms" class="w3-bar-item w3-button">Geri dön.</a>
+<a style="margin:5px" href="/Film/ShowFilms" class="w3-bar-item w3-button">Geri dön.</a>

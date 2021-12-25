@@ -4,7 +4,7 @@
 Projemizin  amacımız film yorumlama ve puanlama için bir web sitesi tasarlamaktır.
 ## App bar:
 Ana sayfa ,Giriş yap ,Kayıt ol ,Profil, Search bar
-##Sayfanın Genel içeriği:
+## Sayfanın Genel içeriği:
 Üstte bir app bar olucak. Sağ tarafta bir kategori tablosu olucak. Sol üstte bir logo.
 
 Sayfanın ana içeriğinde iki sutun halinde filmler sıralanıcaktır. Onun hemen üzerinde filmleri belirlenen kıstaslara(ada göre,A dan Zye gibi) göre sıralayacaktır.

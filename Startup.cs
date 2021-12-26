@@ -3,14 +3,17 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using OMDb.Data;
 using OMDb.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -28,6 +31,21 @@ namespace OMDb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(o => { o.ResourcesPath = "Resources"; });
+            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+            services.Configure<RequestLocalizationOptions>(
+                o =>
+                {
+                    var language = new List<CultureInfo>
+                    {
+                        new CultureInfo("tr"),
+                    new CultureInfo("en")
+                    };
+                    o.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("tr");
+                    o.SupportedCultures = language;
+                    o.SupportedUICultures = language;
+                });
+            
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -68,7 +86,7 @@ namespace OMDb
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

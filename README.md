@@ -7,7 +7,7 @@ Ana sayfa ,Giriş yap ,Kayıt ol ,Profil, Search bar
 ## Sayfanın Genel içeriği:
 Üstte bir app bar olucak. Sağ tarafta bir kategori tablosu olucak. Sol üstte bir logo.
 
-Sayfanın ana içeriğinde iki sutun halinde filmler sıralanıcaktır. Onun hemen üzerinde filmleri belirlenen kıstaslara(ada göre,A dan Zye gibi) göre sıralayacaktır.
+
 
 ## App barın İçeriği
 ### Ana Sayfa :
@@ -18,11 +18,8 @@ Tıklandığında Giriş Yap sayfasına yönlendirilecektir. Bu sayfadan kullan�
 Tıklandığında kayıt ol  sayfasına yönlendirilecektir .Bu sayfadan sadece  kullanıcı kaydı yapılabilir. Admin kaydı sadece admin panelinden bir admin tarafından yapılabilir.
 ### Profil:
 Bu sayfa sadece giriş yapıldığında gözükür. Giriş yapan kullanıcı  ise profil sayfasına yönlendirilir. Bu sayfada ;
-Hesap bilgileri, Yorumlar, Favori filmler ve çıkış yap seçenekleri bulunur.
+Hesap bilgileri çıkış yap seçenekleri bulunur.
 Giriş yapan admin ise profil yerine admin paneli gözükür.
-### Search Bar:
-Bu Alanda filmler isimleri yazılarak aranabilir.
-
 
 ## Admin Paneli
 ### Panelin içeriği:

@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer loc
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -28,8 +29,6 @@
     <link rel="stylesheet" href="~/plugins/venobox/venobox.css">
 
     <!-- Main Stylesheet -->
-    
-
     <!--Favicon-->
     <link rel="shortcut icon" href="~/images/favicon.png" type="image/x-icon">
     <link rel="icon" href="~/images/favicon.png" type="image/x-icon">
@@ -43,32 +42,29 @@
     </div>
     <!-- preloader end -->
     <!-- Modal -->
-    
     <!-- hero slider -->
     <section class="hero-section overlay bg-cover" data-background="~/images/banner/banner-1.jpg">
 
-        <div >
+        <div>
 
             <!-- slider item -->
-            <div >
+            <div>
                 <div class="row">
                     <div class="col-md-8">
-                        <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Sitemize HoşGeldiniz</h1>
-                        
-                        <a href="/Film/ShowFilms" class="btn btn-primary"  8 data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Hadi Başlayalım</a>
+                        <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">@loc["site"]</h1>
+
+                        <a href="/Film/ShowFilms" class="btn btn-primary" 8 data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">@loc["hadi"]</a>
                         <p class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">
-                            Sitemizin Adı Online Movie Database in baş harflerinden oluşmaktadır.
+                            @loc["açıklama"]
                         </p>
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </section>
     <!-- /hero slider -->
     <!-- banner-feature -->
-   
-
     <!-- jQuery -->
     <script src="~/plugins/jQuery/jquery.min.js"></script>
     <!-- Bootstrap JS -->

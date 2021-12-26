@@ -1,26 +1,19 @@
-﻿@model IEnumerable<OMDb.Models.Yorum>
+﻿@model OMDb.Models.Film
 
 @{
     ViewData["Title"] = "Index";
 
 }
-@{ var count = true;}
-@foreach (var item in Model)
-{
-    if (count == true)
-    {
-        @Html.DisplayFor(modelItem => item.Film.Film_Adi)
-        count = false;
-    }
-}
+
+
 <h2>Yorumlar</h2>
 
-<div style="margin:8px" class="row">
+<div style="margin-right:20px" class="row">
     @{
         var tempFilmId = 0;
         string path = "/Film/DetailsYorum/";
     }
-    @foreach (var item in Model)
+    @foreach (var item in Model.Yorumlar)
     {
         <div class="col-sm-12" style="border:outset;border-collapse:collapse;padding:8px">
             <div class=" row">

@@ -36,19 +36,20 @@ namespace OMDb.Controllers
             {
                 return NotFound();
             }
-            var yorumlar = await (from yorum in _context.Yorumlar
-                            join film in _context.Filmler
-                            on yorum.FilmId equals film.FilmId
-                            select yorum).ToListAsync();
+            var filmler = await _context.Filmler.Include(y => y.Yorumlar).FirstOrDefaultAsync(m => m.FilmId == id);
+            //var yorumlar = await (from yorum in _context.Yorumlar
+            //                join film in _context.Filmler
+            //                on yorum.FilmId equals film.FilmId
+            //                select yorum).ToListAsync();
             //var yorumlar = await _context.Yorumlar
             //    .Include(y => y.Film)
             //     //_context.Filmler
             //     .FirstOrDefaultAsync(m => m.FilmId == id);
-            if (yorumlar == null)
+            if (filmler == null)
             {
                 return NotFound();
             }
-            return View(yorumlar);
+            return View(filmler);
             //await _context.Yorumlar.ToListAsync();
         }
         // GET: Yorum/Details/5

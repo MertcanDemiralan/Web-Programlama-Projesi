@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:11603",
-      "sslPort": 44316
+      "applicationUrl": "http://localhost:7947",
+      "sslPort": 44310
     }
   },
   "profiles": {
@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebProgramlamaProjesi": {
+    "OMDb": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

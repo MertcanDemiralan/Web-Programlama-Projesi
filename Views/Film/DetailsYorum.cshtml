@@ -1,4 +1,5 @@
 ﻿@model OMDb.Models.Film
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer loc
 
 @{
     ViewData["Title"] = "Details";
@@ -22,19 +23,19 @@
         </div>
         <div>
             <div class="row">
-                <div><p>Film Kategorileri : </p></div>
+                <div><p>@loc["kategori"]</p></div>
                 <div><p>@Html.DisplayFor(model => model.Film_Kategorileri)</p></div>
 
             </div>
             <div class="row">
-                <div><p>Film Açıklaması : </p></div>
+                <div><p>@loc["açıklama"]</p></div>
                 <div><p>@Html.DisplayFor(model => model.Film_Aciklamasi)</p></div>
             </div>
 
 
         </div>
     </div>
-    <a href="@path" class="w3-bar-item w3-button">Film yorumlarını okumak ve yorum yapmak için tıklayınız.</a>
+    <a href="@path" class="w3-bar-item w3-button">@loc["yorum"]</a>
 
 </div>
 @if (User.Identity.IsAuthenticated)
@@ -43,9 +44,9 @@
     {
         <div>
             @*<a asp-action="Edit" asp-route-id="@Model.FilmId">Edit</a> |*@
-            <a asp-action="Index">Back to List</a>
+            <a asp-action="Index">@loc["sayfaya geri"]</a>
         </div>
     }
 }
 
-<a style="margin:5px" href="/Film/ShowFilms" class="w3-bar-item w3-button">Geri dön.</a>
+<a style="margin:5px" href="/Film/ShowFilms" class="w3-bar-item w3-button">@loc["geri"]</a>

@@ -35,6 +35,10 @@ namespace OMDb.Controllers
 
             var kategori = await _context.Kategoriler
                 .FirstOrDefaultAsync(m => m.KategoriId == id);
+            var filmler = await (from film in _context.Filmler
+                                 where film.Film_Kategorileri.Contains(kategori.Kategori_Adi)
+                                 select film).ToListAsync();
+            TempData["films"] = filmler.ToList();
             if (kategori == null)
             {
                 return NotFound();

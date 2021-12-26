@@ -1,4 +1,5 @@
-﻿
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer loc
+
 <!DOCTYPE html>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,12 +10,10 @@
 
     <!-- Sidebar -->
     <div class="w3-sidebar w3-bar-block" style="width:10%">
-        <a href="/Film/Index" class="w3-bar-item w3-button">Film İşlemleri</a>
-        <a href="/Yorum/ShowAdminYorums" class="w3-bar-item w3-button">Yorum İşlemleri</a>
-        <a href="/Film/Index" class="w3-bar-item w3-button">Film İşlemleri</a>
-        <a href="/Film/Index" class="w3-bar-item w3-button">Film İşlemleri</a>
-        <a href="/Film/Index" class="w3-bar-item w3-button">Film İşlemleri</a>
-    </div>
+        <a href="/Film/Index" class="w3-bar-item w3-button">@loc["film"]</a>
+        <a href="/Yorum/ShowAdminYorums" class="w3-bar-item w3-button">@loc["yorum"] </a>
+        <a href="/Kategori/Index" class="w3-bar-item w3-button">@loc["kategori"]</a>
+</div>
 
 </body>
 </html>
